@@ -13,4 +13,8 @@ This project provide weather analysis to make W. Avy ,the investor, feeling save
 * The std of June Temps is smaller than December which mean the weather might be stable in june.
 
 ## Summary:
-To sum up, this business will be more easier for starting in june.
+To sum up, because of the weather will be hotter and have less rain in june, it is going to be easier to start this business in june.
+
+With query "SELECT date, prcp FROM 'Measurement' where strftime('%m', date) = '06';" and "SELECT date, prcp FROM 'Measurement' where strftime('%m', date) = '12';" we can tell the difference of precipitation between june and december.
+
+With "SELECT station ,strftime('%m', date) AS 'month', SUM(prcp) FROM 'Measurement' where month = '06' group by station,strftime('%m', date);" and "SELECT station ,strftime('%m', date) AS 'month', SUM(prcp) FROM 'Measurement' where month = '12' group by station,strftime('%m', date);" we can compare the precipitation for each station.
